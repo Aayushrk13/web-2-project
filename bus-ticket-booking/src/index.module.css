@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #478CCF;
+}
+.navbar a{
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+}
+.menu{
+    display: flex;
+
+}
+.menu a{
+    margin-left: 7rem;
+    display: flex;
+    align-items: center;
+}
+.searchbar{
+    margin-top: 4rem;
+    height: 20rem;
+    background-image: url("./assets/hero.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    background-color: hsl(0, 0%, 84%);
+    width: 95%;
+    height: 6rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form input{
+    padding: 10px 20px;
+    border: none;
+    border-radius:5px ;
+    margin-left: 20px;
+}
+
+.btnsubmit{
+    background-color: #4535C1;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border:none;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    border-radius:5px ;
+}
+:hover.btnsubmit{
+    background-color: #342891;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.offer{
+    height: 300px;
+    width: 80%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
