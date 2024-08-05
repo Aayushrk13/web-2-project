@@ -6,12 +6,13 @@
 }
 .navbar{
     display: flex;
+    height: 4rem;
     align-items: center;
     justify-content: space-around;
-    background-color: #478CCF;
+    font-size: 1.2rem;
+    background-color: #A2CA71;
 }
 .navbar a{
-    font-size: 1rem;
     text-decoration: none;
     color: black;
 }
@@ -27,40 +28,43 @@
 .searchbar{
     margin-top: 4rem;
     height: 20rem;
-    background-image: url("./assets/hero.jpg");
-    background-size: cover;
+    background-image: url("./assets/background.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .form{
-    background-color: hsl(0, 0%, 84%);
-    width: 95%;
+    background-color: hsla(0, 0%, 84%, 0.788);
+    width: 90%;
     height: 6rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .form input{
+    font-size: 1.2rem;
     padding: 10px 20px;
     border: none;
+    height: 2.8rem;
+    width: 16rem;
     border-radius:5px ;
-    margin-left: 20px;
 }
 
-.btnsubmit{
-    background-color: #4535C1;
+.btn{
+    background-color: #387F39;
     font-size: 15px;
     padding: 10px 20px;
-    margin-right: 20px;
     border:none;
     cursor: pointer;
     transition: 0.2s ease-in;
     border-radius:5px ;
 }
-:hover.btnsubmit{
-    background-color: #342891;
+:hover.btn{
+    background-color: #459c47;
 }
 .container{
     display: flex;
