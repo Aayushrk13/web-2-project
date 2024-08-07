@@ -16,15 +16,15 @@ function Searchbar(){
     }
     return(
         <>
-            <div className={styles.searchbar}>
+            <form className={styles.searchbar}>
                 <div className={styles.form} >
                     <input type="text" placeholder="Pickup" value={pickup} onChange={pickupchange}/>
-                    <button className={styles.btn} onClick={handle_switch_click}><HiOutlineSwitchHorizontal/></button>       
+                    <div className={styles.btn} onClick={handle_switch_click}><HiOutlineSwitchHorizontal/></div>       
                     <input type="text" placeholder="Destination" value={destination} onChange={destinationchange}/>
                     <input type="date"/>
                     <button  className={styles.btn}>Submit</button>
                 </div>
-            </div>
+            </form>
         </>
     );
 }

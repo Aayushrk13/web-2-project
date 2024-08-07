@@ -1,10 +1,9 @@
-import Offer from "./Offers";
 import styles from "./index.module.css";
+import Tourpackage from "./package";
 function Content(){
     return(
         <div className={styles.container}>
-            <Offer></Offer>
-
+            <Tourpackage/>
         </div>
         
     );

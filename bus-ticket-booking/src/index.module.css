@@ -67,11 +67,12 @@
     background-color: #459c47;
 }
 .container{
+    margin-top: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.offer{
+.package{
     height: 300px;
     width: 80%;
     background-color: #ffffff;
