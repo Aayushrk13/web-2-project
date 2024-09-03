@@ -9,6 +9,7 @@ function Tourpackage(){
                 <li>Comfortable transport</li>
                 <li>Populare destination</li>
             </ul>
+            <a href="src/Tours/tours.html"><button>Check packages</button></a>
         </div>
     );
 }
