@@ -9,7 +9,6 @@ function Navbar(){
         <>
             <div className={styles.navbar}>
                 <h1>Logo</h1>
-                <a href="">Tours</a>
                 <a href="">FAQ</a>
                 <a href="">Contact us</a>
                 <div className={styles.menu}>
