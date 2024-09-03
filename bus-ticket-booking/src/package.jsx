@@ -12,6 +12,7 @@ function Tourpackage(){
             </ul>
             <button className={styles.btn}>Book Tour Package</button>
             
+            <a href="src/Tours/tours.html"><button>Check packages</button></a>
         </div>
     );
 }
