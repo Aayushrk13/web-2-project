@@ -77,4 +77,19 @@
     width: 80%;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url("./assets/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100%;
+    
+}
+.package li,.package div{
+    list-style-type: none;
+    margin-top:1.5rem;
+    font-size: 1.2rem;
+    margin-left: 4rem
+}
+.package button{
+    margin-top: 50px;
+    margin-left: 4rem
 }

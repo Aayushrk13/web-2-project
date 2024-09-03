@@ -10,9 +10,8 @@ function Navbar(){
             <div className={styles.navbar}>
                 <h1>Logo</h1>
                 <a href="">Tours</a>
-                <a href="">Reservations</a>
                 <a href="">FAQ</a>
-                <a href="">Conatct us</a>
+                <a href="">Contact us</a>
                 <div className={styles.menu}>
                     <a href=""><BsTicket style={{marginRight:"5px"}}/>Manage Tickets</a>
                     <a href=""><CiLogin style={{marginRight:"5px"}}/>Log in</a>
