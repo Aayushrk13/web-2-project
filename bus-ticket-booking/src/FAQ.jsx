@@ -33,7 +33,7 @@ export default function FAQ(){
     }
     const QAlist=QA.map(qa=>
         <li key={qa.no} onClick={()=>handleQclick(qa.no)}>
-            <div>{qa.question}</div>
+            <div className={styles.question}>{qa.question}</div>
             <div className={styles.answer} style={{display: selected===qa.no?'block':'none'}}>{qa.answer}</div>
         </li>
     )
