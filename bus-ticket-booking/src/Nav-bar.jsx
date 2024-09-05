@@ -15,7 +15,7 @@ function Navbar(){
                     <a href="">FAQ</a>
                     <a href="">Contact us</a>
                     <div className={styles.menu}>
-                        <a href=""><BsTicket style={{marginRight:"5px"}}/>Manage Tickets</a>
+                        <a href="./src/login/login.html"><BsTicket style={{marginRight:"5px"}}/>Manage Tickets</a>
                         <Link to="/login"><CiLogin style={{marginRight:"5px"}}/>Log in</Link>
                         <a href=""><MdOutlinePerson style={{marginRight:"5px"}}/>Sign Up</a>
                     </div>
