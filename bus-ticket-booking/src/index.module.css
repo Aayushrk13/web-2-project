@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #2C3E50;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .navbar{
@@ -10,21 +11,22 @@
     align-items: center;
     justify-content: space-around;
     font-size: 1.2rem;
-    background-color: #A2CA71;
+    background-color: #2E8B57;
 }
 .navbar a{
     text-decoration: none;
-    color: black;
+    font-weight: 750;
 }
 .menu{
     display: flex;
-
+    
 }
 .menu a{
     margin-left: 7rem;
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 750;
 }
 .searchbar{
     margin-top: 4rem;
@@ -56,7 +58,7 @@
 }
 
 .btn{
-    background-color: #387F39;
+    background-color: #2E8B57;
     font-size: 15px;
     padding: 10px 20px;
     border:none;
@@ -65,7 +67,7 @@
     border-radius:5px ;
 }
 :hover.btn{
-    background-color: #459c47;
+    background-color: #2e8b5696;
 }
 .container{
     margin-top: 4rem;
@@ -103,9 +105,7 @@
     cursor:pointer;
     
 }
-.reviewcontainer{
-    
-}
+
 .reviewblock{
     display: flex;
     flex-direction: row;
@@ -119,4 +119,32 @@
     width: 16rem;
     background-color: #ffffff;
     border:1px solid #bbbbbb;
+}
+.contact_main{
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.contact{
+    margin-top: 4rem;
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contactinput{
+    margin-top: 2rem;
+}
+.contactinput textarea{
+    height:10rem ;
+    width: 32rem;
+    resize: none;
+}
+#contactbtn{
+    align-self: flex-end;
+    margin-top:1.2rem;
+    margin-right: 0.5rem;
 }

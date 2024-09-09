@@ -9,7 +9,7 @@ export default function Reviewbox({name,reviewdes}){
                 <img src="" alt="customer photo" />
                 <p>{name}</p>
                 </div>
-                <div>
+                <div >
                     <p>{reviewdes}</p>
                 </div>
             </div>

@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.result{
+    margin: 20px;
+    height: 14rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+.info{
+    width: 60%;
+    height:70%;
+    margin-right: 10px;
+    border-right: 1px solid #2C3E50;
+}
+.busname{
+    font-size: 20px;
+    font-weight: 650;
+}
+.timedetail{
+}
+.info p{
+    margin: 0.5rem;
+}
+.time{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+}
+.price{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 8rem;
+    margin-left: 10px;
+
+}

@@ -1,0 +1,40 @@
+.container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 5 seats per row */
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  background-color: #ddd;
+  border: 2px solid #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.seat.selected {
+  background-color: green;
+  color: white;
+}
+.seat.prebooked{
+  background-color: red;
+  color: white;
+}
+.selected-seats {
+  margin-top: 20px;
+}
+
+.selected-seats p {
+  font-size: 18px;
+}
