@@ -2,27 +2,27 @@ import React, { useEffect, useState } from "react";
 import "./BusSeatBooking.css"; // Optional for styling
 import { useLocation } from "react-router-dom";
 const Seatbooking = () => {
-    const location=useLocation();
-    const busdata=location.state;
+  const location = useLocation();
+  const busdata = location.state;
   const totalSeats = 20; // Total number of seats available
   const [selectedSeats, setSelectedSeats] = useState([]);
   // Generate seat numbers dynamically
   const seats = Array.from({ length: totalSeats }, (_, index) => index + 1);
-  const preselected=JSON.parse(busdata.bookedseats);
+  const preselected = JSON.parse(busdata.bookedseats);
   console.log(preselected);
   // Handle seat selection/deselection
   const handleSeatClick = (seatNumber) => {
-      if (selectedSeats.includes(seatNumber)) {
-          setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
-        } else {
-        if(selectedSeats.length>5){
-            return;
-        }
-        setSelectedSeats([...selectedSeats, seatNumber]);
+    if (selectedSeats.includes(seatNumber)) {
+      setSelectedSeats(selectedSeats.filter((seat) => seat !== seatNumber));
+    } else {
+      if (selectedSeats.length > 5) {
+        return;
+      }
+      setSelectedSeats([...selectedSeats, seatNumber]);
     }
     console.log(selectedSeats);
   };
-
+  const totalprice=selectedSeats.length*busdata.price;
   return (
     <div className="container">
 
@@ -35,8 +35,8 @@ const Seatbooking = () => {
             className={`seat
               ${preselected.includes(seatNumber) ? "prebooked" : ""}
               ${selectedSeats.includes(seatNumber) ? "selected" : ""}`}
-            onClick={() =>{
-              if(!preselected.includes(seatNumber)) {
+            onClick={() => {
+              if (!preselected.includes(seatNumber)) {
                 handleSeatClick(seatNumber);
               }
             }}

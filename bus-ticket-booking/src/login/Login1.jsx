@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import axios from 'axios';
-function Login(){
+export default function Login(){
     const navigate=useNavigate();
     const url="http://localhost/php/Login.php";
     const [email,setemail]=useState("");
