@@ -26,7 +26,7 @@ export default function Login(){
     }
     const handlesresponse=(data)=>{
         if(data==null){
-            navigate("/login");
+            alert("Invalid email or password");
             return;
         }
         navigate("/",{state:data});
