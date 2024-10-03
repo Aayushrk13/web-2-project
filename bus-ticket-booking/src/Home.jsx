@@ -1,7 +1,7 @@
 import Navbar from "./Nav-bar";
 import Searchbar from "./Search-bar";
 import FAQ from "./FAQ";
-import { useLocation } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { useState,useEffect } from "react";
 
 export default function Home(){

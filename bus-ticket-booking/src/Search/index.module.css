@@ -9,7 +9,7 @@
     border: 1px solid black;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 97%;
     align-items: center;
     justify-content: space-around;
 }

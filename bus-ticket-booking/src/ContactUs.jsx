@@ -10,7 +10,6 @@ export default function ContactUs(){
     const onSubmit = async (event) => {
       event.preventDefault();
       setResult("Sending....");
-      console.log(event.target);
       const formData = new FormData(event.target);
       formData.append("Sender Email",useremail);
   
@@ -18,7 +17,11 @@ export default function ContactUs(){
   
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        mode:'no-cors',
+        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        }
       });
   
       const data = await response.json();

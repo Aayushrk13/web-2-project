@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./BusSeatBooking.css"; // Optional for styling
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate, redirect } from "react-router-dom";
 import axios from "axios";
 const Seatbooking = () => {
+  const navigate = useNavigate();
   const location = useLocation();
-  const busdata = location.state;
+  const busdata = location.state.data;
+  const userinfo=location.state.userinfo;
+  const loggedin=location.state.loggedin;
   const totalSeats = 20; // Total number of seats available
+  const phpurl='http://localhost/php/pay.php';
+  const inserturl="http://localhost/php/successpay.php";
   const [selectedSeats, setSelectedSeats] = useState([]);
-  const hmacurl = 'http://localhost/php/hmac.php';
-  const phpurl = "http://localhost/php/pay.php";
   // Generate seat numbers dynamically
   const seats = Array.from({ length: totalSeats }, (_, index) => index + 1);
   const preselected = JSON.parse(busdata.bookedseats);
-  console.log(preselected);
   // Handle seat selection/deselection
   const handleSeatClick = (seatNumber) => {
     if (selectedSeats.includes(seatNumber)) {
@@ -23,33 +25,36 @@ const Seatbooking = () => {
       }
       setSelectedSeats([...selectedSeats, seatNumber]);
     }
-    console.log(selectedSeats);
   };
   const totalprice = selectedSeats.length * busdata.price;
-  const gethmac = () => {
-    axios.post(hmacurl)
-      .then(response =>  response.data)
-      .catch(error => alert(error.message));
-
-  }
-  const paywithesewa = () => {
-    const fdata={
-      amount: totalprice,
-      tax_amount:10,
-      transaction_uuid:busdata.busid,
-      product_code:busdata.busname,
-      product_service_charge:0,
-      product_delivery_charge:0,
-      success_url:'https://esewa.com.np',
-      failure_url:'https://google.com',
-      signed_field_names:'total_amount,transaction_uuid,product_id',
-      signature:gethmac()
+  const handlepay=()=>{
+    if(totalprice==0){
+      alert('Select seats');
+      return;
     }
-    axios.post(phpurl, fdata)
-      .then(response => console.log(response))
-      .catch(error => alert(error.message));
+    console.log(totalprice);
+    const bookedseats=[...selectedSeats,...preselected];
+    const paydata=new FormData();
+    paydata.append('amount',totalprice*100);
+    paydata.append('purchase_order_id',userinfo.email);
+    paydata.append('purchase_name',busdata.busname);
+    paydata.append('customer_name',userinfo.fullname);
+    paydata.append('customer_email',userinfo.email);
+    paydata.append('busid',busdata.busid);
+    paydata.append('bookedseats',`[${bookedseats}]`);
+    paydata.append('selectedseats',`[${selectedSeats}]`);
+    //for table updates
+    axios.post(phpurl,paydata)
+    .then(response=>handleresponse(response.data))
+    .catch(error=>alert(error));
+    axios.post("http://localhost/php/successpay.php",paydata)
+    .then(response=>console.log(response.data));
   }
+  const handleresponse=(response)=>{
 
+    console.log(response);
+    window.location.href=response.payment_url;
+  }
   return (
     <div className="container">
 
@@ -84,7 +89,7 @@ const Seatbooking = () => {
         </div>
         <div className="payinfo">
           <p>Total Amount: NPR  {totalprice}<br /></p>
-          <button className="btn" onClick={paywithesewa}>Pay</button>
+          <button className="btn" onClick={handlepay}>Pay</button>
         </div>
       </div>
     </div>
